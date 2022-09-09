@@ -1,0 +1,85 @@
+/* color palette from <https://github.com/vuejs/theme> */
+
+:root {
+    --fd-base-transparent: transparent;
+
+    --fd-c-white: #ffffff;
+    --fd-c-disabled: #CECECE;
+    --fd-c-black: #000000;
+    --fd-c-light-grey-gg: #F8F9F9;
+    --fd-c-primary: #090909;
+    --fd-c-secondary: #808080;
+    --fd-c-line-interaction-white: #ECECEC;
+    --fd-c-line-secondary-black: #595959;
+    --fd-c-line-brand-color-red: #CD0039;
+    --fd-c-line-brand-color-red-interaction: #B80033;
+    --fd-c-line-brand-color-red-20: #F5CCD7;
+    --fd-c-line-brand-color-peach: #FFF3E0;
+    --fd-c-line-brand-color-peach-support: #FFFAF3;
+    --fd-c-line-brand-color-dark-peach: #F6D7A4;
+    --fd-c-line-brand-color-silver: #A7A9AC;
+    --fd-c-linear-brand-color: #F22F65;
+    --fd-c-line-secondary-grey: #F2F2F7;
+    --fd-c-success: #4CAF50;
+    --fd-c-pending: #E67E22;
+    --fd-c-warning: #BE1800;
+    --fd-c-search-color: #FFF3E0;
+    --fd-c-line-light-blue: #576B95;
+
+    --fd-bg-white: #ffffff;
+    --fd-bg-disabled: #CECECE;
+    --fd-bg-black: #000000;
+    --fd-bg-light-grey-gg: #F8F9F9;
+    --fd-bg-primary: #090909;
+    --fd-bg-secondary: #808080;
+    --fd-bg-line-interaction-white: #ECECEC;
+    --fd-bg-line-secondary-black: #595959;
+    --fd-bg-line-brand-color-red: #CD0039;
+    --fd-bg-line-brand-color-red-interaction: #B80033;
+    --fd-bg-line-brand-color-red-20: #F5CCD7;
+    --fd-bg-line-brand-color-peach: #FFF3E0;
+    --fd-bg-line-brand-color-peach-support: #FFFAF3;
+    --fd-bg-line-brand-color-dark-peach: #F6D7A4;
+    --fd-bg-line-brand-color-silver: #A7A9AC;
+    --fd-bg-linear-brand-color: #F22F65;
+    --fd-bg-line-secondary-grey: #F2F2F7;
+    --fd-bg-success: #4CAF50;
+    --fd-bg-pending: #E67E22;
+    --fd-bg-warning: #BE1800;
+    --fd-bg-search-color: #FFF3E0;
+    --fd-bg-line-light-blue: #576B95;
+
+    --desktop: 'only screen and (min-width: 900px)';
+    --mobile: 'only screen and  (max-width: 900px)';
+}
+
+/* semantic color variables for this project */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: var(--fd-c-black);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    font-weight: normal;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--fd-c-primary);
+    background: var(--color-background);
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
