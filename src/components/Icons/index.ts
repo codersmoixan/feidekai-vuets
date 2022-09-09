@@ -1,0 +1,13 @@
+export { default as MobilePhoneIcon } from "./MobilePhoneIcon";
+export { default as HomeIcon } from "./HomeIcon";
+export { default as CatalogIcon } from "./CatalogIcon";
+export { default as BlogIcon } from "./BlogIcon";
+export { default as AddToCartIcon } from "./AddToCartIcon";
+export { default as CartIcon } from "./CartIcon";
+export { default as AccountIcon } from "./AccountIcon";
+export { default as SearchIcon } from "./SearchIcon";
+export { default as AngleRightIcon } from "./AngleRightIcon";
+export { default as SettingIcon } from "./SettingIcon";
+export { default as InvoiceIcon } from "./InvoiceIcon";
+export { default as AutoShipIcon } from "./AutoShipIcon";
+export { default as DeleteIcon } from "./DeleteIcon";
