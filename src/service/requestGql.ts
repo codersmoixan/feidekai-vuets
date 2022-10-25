@@ -5,6 +5,13 @@ import { BASE_GQL_API_URL } from "@/service/utils";
 import type { RequestConfig } from "@/service/type";
 import type { AxiosResponse, AxiosRequestConfig } from "axios";
 
+export const querySetting = {
+  initialStale: true,
+  refetchOnMount: false,
+  refetchOnWindowFocus: false,
+  retry: false,
+};
+
 function requestInterceptors(config: AxiosRequestConfig): AxiosRequestConfig {
   return config;
 }
@@ -32,7 +39,7 @@ function gqlConfig(): RequestConfig {
   };
 }
 
-const request = new Axios(gqlConfig()) as any;
+const request = new Axios(gqlConfig());
 export const requestGql = request.requestGql.bind(request);
 
 export default request;

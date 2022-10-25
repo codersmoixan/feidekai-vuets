@@ -1,7 +1,7 @@
-import type { TypographyKey } from "@/utils/theme/types/typography.types";
-import type { ObjectType } from "@/utils/theme/utils/types";
+import type { ObjectType } from "@/types";
+import type { TypographyVariant } from "@/components/Typography/types";
 
-export type ButtonsVariant = TypographyKey;
+export type ButtonsVariant = TypographyVariant;
 export type ButtonsClasses = ObjectType;
 export type ButtonsType =
   | "primary"

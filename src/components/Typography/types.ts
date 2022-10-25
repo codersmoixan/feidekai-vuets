@@ -1,5 +1,26 @@
-import type { PaletteTextColorKey } from "@/utils/theme/types/palette.types";
-import type { TypographyKey } from "@/utils/theme/types/typography.types";
+export type TypographyColor =
+  | "main"
+  | "primary"
+  | "secondary"
+  | "white"
+  | "disabled"
+  | "success"
+  | "danger"
+  | "warning";
 
-export type TypographyType = PaletteTextColorKey;
-export type TypographyVariant = TypographyKey;
+export type TypographyVariant =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "body1"
+  | "body2"
+  | "button"
+  | "caption"
+  | "content16"
+  | "mask"
+  | "minorContent"
+  | "common24"
+  | string;

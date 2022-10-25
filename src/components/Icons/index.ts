@@ -11,3 +11,6 @@ export { default as SettingIcon } from "./SettingIcon";
 export { default as InvoiceIcon } from "./InvoiceIcon";
 export { default as AutoShipIcon } from "./AutoShipIcon";
 export { default as DeleteIcon } from "./DeleteIcon";
+export { default as BottomWaveIcon } from "./BottomWaveIcon";
+export { default as TopWaveIcon } from "./TopWaveIcon";
+export { default as SwooshIcon } from "./SwooshIcon";

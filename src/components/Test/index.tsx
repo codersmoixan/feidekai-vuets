@@ -1,10 +1,9 @@
 import { defineComponent, ref } from "vue";
 import useIncrement from "@/hooks/useIncrement";
 import type { SetupContext, Ref } from "vue";
-import Hidden from "@/components/Hidden";
-import useMediaQuery from "@/hooks/useMediaQuery";
 import Test03 from "@/components/Test03";
 import TestComponent from "@/components/TestComponent/index";
+import { Hidden, useMediaQuery } from "vue3-makestyles";
 
 const Test = defineComponent({
   setup(props, context: SetupContext) {

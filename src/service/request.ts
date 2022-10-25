@@ -33,7 +33,7 @@ function requestConfig(): RequestConfig {
   };
 }
 
-const baseRequest = new Axios(requestConfig()) as any;
+const baseRequest = new Axios(requestConfig());
 
 export const request = baseRequest.request.bind(baseRequest);
 
