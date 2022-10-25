@@ -4,6 +4,7 @@ import HeaderBanner from "@/views/HomePage/components/HeaderBanner";
 import CatalogBanner from "@/views/HomePage/components/CatalogBanner";
 import HomeBanner from "@/views/HomePage/components/HomeBanner";
 import Promotions from "@/views/HomePage/components/Promotions";
+import BlogBanner from "@/views/HomePage/components/BlogBanner";
 
 const useStyles = makeStyles(() => ({
   container: {
@@ -22,7 +23,8 @@ export default defineComponent({
         <HeaderBanner />
         <CatalogBanner />
         <HomeBanner />
-        <Promotions />
+        {/*<Promotions />*/}
+        <BlogBanner />
       </div>
     );
   },
