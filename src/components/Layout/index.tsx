@@ -1,1 +1,1 @@
-export { default as MainNavigation } from "./components/MainNavigation";
+export { default as Layout } from "./components/Layout";

@@ -1,18 +1,6 @@
 import { createBreakpoints, createTheme } from "vue3-makestyles";
 
-export const initialBreakpoints = {
-  values: {
-    xs: 0,
-    sm: 600,
-    md: 900,
-    lg: 1200,
-    xl: 15036,
-  },
-  unit: "px",
-  step: 5,
-};
-
-export const breakpoints = createBreakpoints(initialBreakpoints);
+export const breakpoints = createBreakpoints();
 
 export const Primary = "#090909";
 export const Secondary = "#808080";
@@ -53,12 +41,15 @@ export const safaBottomBarHeight = "env(safe-area-inset-bottom)";
 export const compatibleBottomBarHeight = (h = 72) =>
   `calc(${h}px + ${safaBottomBarHeight})`;
 
+interface Options extends Record<any, any> {
+  css?: Record<any, any>;
+}
+
+const md = breakpoints.up("md");
+console.log(md);
+
 export default createTheme({
   breakpoints: breakpoints,
-  spacing: {
-    step: 8,
-    unit: "px",
-  },
   palette: {
     primary: {
       main: FitLineBrandColorRed,
@@ -75,6 +66,7 @@ export default createTheme({
       linear: LinearBrandColor,
       primary: Primary,
       secondary: Secondary,
+      secondaryPeach: FitLineBrandColorPeachSupport,
     },
     error: {
       main: Warning,
@@ -132,87 +124,6 @@ export default createTheme({
       textPrimary: Primary,
       textSecondary: Secondary,
     },
-    h1: {
-      fontSize: "24px",
-      fontWeight: 700,
-      lineHeight: 1.5,
-      [breakpoints.up("md")]: {
-        fontSize: 32,
-      },
-    },
-    h2: {
-      fontSize: "16px",
-      fontWeight: 700,
-      lineHeight: 1.5,
-      [breakpoints.up("md")]: {
-        fontSize: "24px",
-      },
-    },
-    h3: {
-      fontSize: "14px",
-      fontWeight: 400,
-      lineHeight: 1.428,
-    },
-    h4: {
-      fontSize: "12px",
-      lineHeight: 1.5,
-      fontWeight: 400,
-      [breakpoints.up("md")]: {
-        fontSize: "14px",
-      },
-    },
-    body1: {
-      fontSize: "16px",
-      fontWeight: 400,
-      lineHeight: 1.5,
-    },
-    body2: {
-      fontSize: "14px",
-      fontWeight: 400,
-      lineHeight: 1.5,
-    },
-    button: {
-      fontSize: "14px",
-      fontWeight: 700,
-      lineHeight: 1.428,
-    },
-    caption: {
-      fontSize: "10px",
-      fontWeight: 400,
-      lineHeight: 1.4,
-    },
-    content16: {
-      fontSize: "16px",
-    },
-    mask: {
-      fontSize: "16px",
-    },
-    minorContent: {
-      fontSize: "12px",
-    },
-    common24: {
-      fontSize: "24px",
-      lineHeight: 1.147,
-    },
-  },
-  css: {
-    box: {
-      width: "400px",
-      height: "400px",
-      backgroundColor: "red",
-      "& .children": {
-        width: "100px",
-        height: "100px",
-        background: "white",
-        borderRadius: "50%",
-      },
-      "&.active": {
-        cursor: "pointer",
-      },
-      [breakpoints.up("md")]: {
-        backgroundColor: "blue",
-      },
-    },
   },
   mixins: {
     toolbar: {
@@ -226,5 +137,72 @@ export default createTheme({
   },
   shape: {
     borderRadius: 8,
+  },
+  css: {
+    Typography: {
+      h1: {
+        fontSize: "24px",
+        fontWeight: 700,
+        lineHeight: 1.5,
+        [breakpoints.up("md") as string]: {
+          fontSize: 32,
+        },
+      },
+      h2: {
+        position: "relative",
+        fontSize: "16px",
+        fontWeight: 700,
+        lineHeight: 1.5,
+        [breakpoints.up("md")]: {
+          fontSize: "24px",
+        },
+      },
+      h3: {
+        fontSize: "14px",
+        fontWeight: 400,
+        lineHeight: 1.428,
+      },
+      h4: {
+        fontSize: "12px",
+        lineHeight: 1.5,
+        fontWeight: 400,
+        [breakpoints.up("md")]: {
+          fontSize: "14px",
+        },
+      },
+      h6: {
+        fontSize: "10px",
+      },
+      body1: {
+        fontSize: "16px",
+        fontWeight: 400,
+        lineHeight: 1.5,
+      },
+      body2: {
+        fontSize: "14px",
+        fontWeight: 400,
+        lineHeight: 1.5,
+      },
+      button: {
+        fontSize: "14px",
+        fontWeight: 700,
+        lineHeight: 1.428,
+      },
+      caption: {
+        fontSize: "12px",
+        fontWeight: 400,
+        lineHeight: 1.4,
+      },
+      content16: {
+        fontSize: "16px",
+      },
+      minorContent: {
+        fontSize: "12px",
+      },
+      common24: {
+        fontSize: "24px",
+        lineHeight: 1.147,
+      },
+    },
   },
 });

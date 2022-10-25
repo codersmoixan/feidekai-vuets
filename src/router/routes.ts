@@ -1,12 +1,13 @@
 import { routesOptions } from "@/router/index";
-import type { ObjectType } from "@/utils/theme/utils/types";
 import type { RouteRecordRaw } from "vue-router";
 
+type RoutesKey = "home" | "blog" | "cart" | "catalog" | "account" | string;
+
 function generateRoutes(options: RouteRecordRaw[]) {
-  const routes: ObjectType = {};
+  const routes: Record<RoutesKey, string> = {};
 
   for (const key of options) {
-    routes[key.name as any] = key.path;
+    routes[key.name as RoutesKey] = key.path;
   }
 
   return routes;

@@ -16,6 +16,16 @@ export const routesOptions = [
     name: "account",
     component: () => import("@/views/Account"),
   },
+  {
+    path: "/blog",
+    name: "blog",
+    component: () => import("@/views/Blog/index"),
+  },
+  {
+    path: "/catalog",
+    name: "catalog",
+    component: () => import("@/views/Catalog/index"),
+  },
 ];
 
 const router = createRouter({

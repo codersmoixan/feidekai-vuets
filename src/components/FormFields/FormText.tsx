@@ -55,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   cover: {
+    width: "auto",
     position: "absolute",
     left: 0,
     top: "50%",

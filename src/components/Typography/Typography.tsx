@@ -1,28 +1,32 @@
-import { defineComponent, onMounted, watch, ref, toRefs } from "vue";
+import { defineComponent } from "vue";
 import { Typography } from "@arco-design/web-vue";
-import useGenerateTypographyCSS from "@/utils/theme/hooks/useGenerateTypographyCSS";
 import type { PropType } from "vue";
 import makeStyles from "vue3-makestyles";
 import clsx from "clsx";
 import type {
-  TypographyType,
+  TypographyColor,
   TypographyVariant,
 } from "@/components/Typography/types";
 
-const useStyles = makeStyles((theme, props) => ({
-  root: {
-    color: theme.palette?.text?.[props?.color],
-    "&.bold": {
+const useStyles = makeStyles(
+  (theme, props) => ({
+    root: {
+      display: props?.display,
+      fontFamily: theme.typography.fontFamily,
       fontWeight: props?.bold,
+      color: theme.palette?.text?.[props?.color],
     },
-  },
-}));
+  }),
+  {
+    name: "Typography",
+  }
+);
 
 export default defineComponent({
   name: "Typography",
   props: {
     color: {
-      type: String as PropType<TypographyType>,
+      type: String as PropType<TypographyColor>,
       default: "primary",
     },
     variant: {
@@ -30,28 +34,13 @@ export default defineComponent({
       default: "h3",
     },
     bold: Number,
+    display: String,
   },
   setup(props, { slots, attrs }) {
-    const { variant, bold } = toRefs(props);
-    const { className, initThemeCSS } = useGenerateTypographyCSS();
     const classes = useStyles(props);
 
-    onMounted(() => {
-      initThemeCSS(variant.value);
-    });
-
-    watch(variant, (newVal) => {
-      const node = ref(newVal);
-      initThemeCSS(node.value);
-    });
-
     return () => (
-      <Typography
-        class={clsx(className.value, classes.root, {
-          bold: bold.value,
-        })}
-        {...attrs}
-      >
+      <Typography class={clsx(classes.root, classes[props.variant])} {...attrs}>
         {slots.default && slots.default()}
       </Typography>
     );
