@@ -6,7 +6,7 @@ import isUndefined from "lodash/isUndefined";
 import { isNull } from "@/utils/helper";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  _root: {
     position: "relative",
   },
   inputRoot: {
@@ -126,7 +126,7 @@ export default defineComponent({
     };
 
     return () => (
-      <div class={classes.root}>
+      <div class={classes._root}>
         <Input
           class={clsx(
             classes.inputRoot,
@@ -138,10 +138,9 @@ export default defineComponent({
           onInput={handleInput}
           onFocus={handleFocus}
           onBlur={handleBlur}
+          v-slots={slots}
           {...attrs}
-        >
-          {{ ...slots }}
-        </Input>
+        />
         <span class={clsx(classes.cover, "cover")}>{placeholder.value}</span>
       </div>
     );

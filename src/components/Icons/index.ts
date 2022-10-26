@@ -14,3 +14,4 @@ export { default as DeleteIcon } from "./DeleteIcon";
 export { default as BottomWaveIcon } from "./BottomWaveIcon";
 export { default as TopWaveIcon } from "./TopWaveIcon";
 export { default as SwooshIcon } from "./SwooshIcon";
+export { default as AngleLeftIcon } from "./AngleLeftIcon";

@@ -1,9 +1,10 @@
 import { defineComponent } from "vue";
 import makeStyles, { Hidden, useTheme } from "vue3-makestyles";
 import Typography from "@/components/Typography/Typography";
-import { SearchIcon, SwooshIcon } from "@/components/Icons";
+import { SwooshIcon } from "@/components/Icons";
 import Buttons from "@/components/Buttons/Buttons";
 import { useRouter } from "vue-router";
+import Search from "@/components/Search";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -14,18 +15,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 2),
   },
   search: {
-    position: "relative",
-    display: "flex",
-    alignItems: "center",
     marginTop: theme.spacing(2),
-    padding: theme.spacing(2),
-    boxShadow: "0 0 16px rgb(0 0 0 / 8%)",
-    borderRadius: 8,
-    backgroundColor: theme.palette.primary.white,
-    zIndex: 2,
-  },
-  placeholder: {
-    marginLeft: theme.spacing(1),
   },
   bannerRoot: {
     display: "flex",
@@ -79,12 +69,7 @@ export default defineComponent({
           <Hidden mdUp>
             <Typography variant="h2">Fitline非德凯中国旗舰店小程序</Typography>
           </Hidden>
-          <div class={classes.search}>
-            <SearchIcon width={16} height={16} />
-            <Typography color="disabled" class={classes.placeholder}>
-              非德凯小红
-            </Typography>
-          </div>
+          <Search class={classes.search} />
           <div class={classes.bannerRoot}>
             <div>
               <Typography color="main" variant="caption" display="block">
